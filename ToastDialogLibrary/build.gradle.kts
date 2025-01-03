@@ -52,12 +52,15 @@ afterEvaluate {
                 artifactId = "toastdialoglibrary" // Replace with your library name
                 version = "1.0.1"
 
+              /*  // Include the sources JAR
+                artifact(androidSourcesJar.get())
+
 //                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
                   // Optional: Attach sources
                   artifact(tasks.create("androidSourcesJar", Jar::class) {
                       archiveClassifier.set("sources")
                       from(android.sourceSets["main"].java.srcDirs)
-                  })
+                  })*/
             }
         }
         repositories {
