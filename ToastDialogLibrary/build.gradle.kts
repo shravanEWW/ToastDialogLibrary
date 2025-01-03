@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.maven.publish)
 }
 
 android {
@@ -40,4 +41,30 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+afterEvaluate {
+    publishing{
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.example.toastdialoglibrary"
+                artifactId = "toastdialoglibrary" // Replace with your library name
+                version = "1.0.1"
+
+//                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                  // Optional: Attach sources
+                  artifact(tasks.create("androidSourcesJar", Jar::class) {
+                      archiveClassifier.set("sources")
+                      from(android.sourceSets["main"].java.srcDirs)
+                  })
+            }
+        }
+        repositories {
+            maven {
+                name = "jitpack"
+                url = uri("https://jitpack.io")
+            }
+        }
+    }
 }
