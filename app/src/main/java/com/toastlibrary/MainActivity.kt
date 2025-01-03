@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val toastDialog = ToastDialog(this)
-        toastDialog.showToast("This is a custom toast dialog!", 3000)
+        /* val toastDialog = ToastDialog(this)
+         toastDialog.showToast("This is a custom toast dialog!", 3000)*/
 
+        val toastDialog = ToastDialog(this@MainActivity)
+//        toastDialog.showWithTimeout("hello")
+        toastDialog.showWithButtons(message = "This is a custom toast dialog", onCancel = {}, onAction = {})
     }
 }

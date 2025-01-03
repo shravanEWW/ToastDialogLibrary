@@ -1,0 +1,20 @@
+<resources>
+    <!-- Primary Button Style -->
+    <style name="ButtonPrimary">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Secondary Button Style -->
+    <style name="ButtonSecondary">
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

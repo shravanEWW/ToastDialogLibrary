@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.constraintlayout)
     implementation(project(":ToastDialogLibrary"))
+//    implementation("com.github.shravanEWW:ToastDialogLibrary:v1.0.3")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
